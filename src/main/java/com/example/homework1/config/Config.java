@@ -17,7 +17,7 @@ public class Config {
     }
 
     @Bean
-    @ConditionalOnProperty(value = "devProfile", havingValue = "false")
+    @ConditionalOnProperty(value = "devProfile", havingValue = "false", matchIfMissing = true)
     public SystemProfile prodProfile() {
         return new ProductionProfile();
     }

@@ -32,7 +32,6 @@ class Homework1ApplicationTests {
 
     @Test
     public void devAppTest() {
-        devapp.start();
         ResponseEntity<String> responseEntity = testRestTemplate.getForEntity("http://localhost:" + devapp.getMappedPort(8080) + "/profile", String.class);
         Assertions.assertEquals("Current profile is dev", responseEntity.getBody());
     }
